@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>実践② 壊れたコードを直そう</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <div class="max-w-4xl mx-auto px-6 py-8">
+
+    <a href="index.html" class="text-blue-500 hover:underline text-sm">← ホームに戻る</a>
+
+    <h1 class="text-2xl font-bold text-gray-800 mt-4 mb-2">実践② 壊れたコードを直そう</h1>
+    <p class="text-gray-500 mb-10">以下の3つのコードはどれも中央寄せできていません。1つずつ原因を直してください。</p>
+
+    <!-- Case A -->
+    <div class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-3">Case A — mx-auto が効かない</h2>
+      <div class="border-2 border-dashed border-red-200 rounded-lg p-6 bg-white">
+        <!-- ↓ ここを直そう -->
+        <div class="mx-auto bg-white border border-gray-200 rounded-xl shadow p-5">
+          <h2 class="font-bold text-gray-800">メニューカード</h2>
+          <p class="text-gray-500 text-sm mt-1">本日のおすすめ</p>
+          <p class="text-blue-600 font-bold mt-2">¥800</p>
+        </div>
+      </div>
+      <p class="text-sm text-amber-700 bg-amber-50 px-4 py-2 rounded mt-3">ヒント：<code>mx-auto</code> は幅（<code>w-*</code>）の指定とセットで使う。幅がないと余白がゼロで動かない。</p>
+    </div>
+
+    <!-- Case B -->
+    <div class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-3">Case B — justify-center が効かない</h2>
+      <div class="border-2 border-dashed border-red-200 rounded-lg p-6 bg-white">
+        <!-- ↓ ここを直そう -->
+        <div class="justify-center gap-4">
+          <button class="bg-teal-600 text-white px-5 py-2 rounded-lg font-bold">決定</button>
+          <button class="bg-gray-200 text-gray-700 px-5 py-2 rounded-lg font-bold">戻る</button>
+        </div>
+      </div>
+      <p class="text-sm text-amber-700 bg-amber-50 px-4 py-2 rounded mt-3">ヒント：<code>justify-center</code> と <code>items-center</code> は <code>flex</code>（または <code>grid</code>）がないと機能しない。</p>
+    </div>
+
+    <!-- Case C -->
+    <div class="mb-10">
+      <h2 class="text-lg font-bold text-gray-700 mb-3">Case C — 縦中央寄せが効かない</h2>
+      <div class="border-2 border-dashed border-red-200 rounded-lg p-6 bg-white">
+        <!-- ↓ ここを直そう -->
+        <div class="flex items-center bg-gradient-to-r from-teal-500 to-blue-600 rounded-xl px-8">
+          <div>
+            <h2 class="text-white text-xl font-bold">お知らせ</h2>
+            <p class="text-teal-100 text-sm mt-1">新メニューが登場しました</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-sm text-amber-700 bg-amber-50 px-4 py-2 rounded mt-3">ヒント：縦中央は <code>flex</code> + <code>items-center</code> + <strong>親の高さ指定</strong> がセット。高さがないと縦方向の余白がゼロ。</p>
+    </div>
+
+  </div>
+</body>
+</html>
